@@ -273,16 +273,15 @@
 
 <script>
 const lines = [
-  {t:27.3, endT:28.43, type:'', words:[{w:'Danny!',t:27.30}]},
-  {t:30.3, endT:33.43, type:'', words:[{w:'Warum',t:30.30},{w:'hast',t:30.93},{w:'du',t:31.55},{w:'nicht',t:32.18},{w:'gemäht?',t:32.80}]},
-  {t:36.33, endT:40.26, type:'', words:[{w:'Schau',t:36.33},{w:'dir',t:37.12},{w:'den',t:37.90},{w:'Rasen',t:38.69},{w:'an,',t:39.47}]},
-  {t:41.66, endT:44.95, type:'', words:[{w:'die',t:41.66},{w:'Halme',t:42.21},{w:'sind',t:42.76},{w:'nicht',t:43.30},{w:'gleich',t:43.85},{w:'lang!',t:44.40}]},
-  {t:47.92, endT:50.04, type:'', words:[{w:'Warum',t:47.92},{w:'holst',t:48.22},{w:'du',t:48.53},{w:'nicht',t:48.83},{w:'die',t:49.13},{w:'kleine',t:49.43},{w:'Schere',t:49.74}]},
-  {t:50.26, endT:52.4, type:'', words:[{w:'und',t:50.26},{w:'legst',t:51.33}]},
-  {t:52.4, endT:55.4, type:'', words:[{w:'lo-os?',t:52.40}]},
-  {t:55.64, endT:57.61, type:'', words:[{w:'Du',t:55.64},{w:'bist',t:56.03},{w:'halt',t:56.43},{w:'immer',t:56.82},{w:'unterwegs:',t:57.22}]},
+  {t:27.3, endT:28.43, type:'', words:[{w:'DANNY!',t:27.30}]},
+  {t:30.2, endT:32.9, type:'', words:[{w:'Warum',t:30.20},{w:'hast',t:30.74},{w:'du',t:31.28},{w:'nicht',t:31.82},{w:'gemäht?',t:32.36}]},
+  {t:36.83, endT:39.16, type:'', words:[{w:'Schau',t:36.83},{w:'dir',t:37.30},{w:'den',t:37.76},{w:'Rasen',t:38.23},{w:'an,',t:38.69}]},
+  {t:41.46, endT:44.45, type:'', words:[{w:'die',t:41.46},{w:'Halme',t:41.96},{w:'sind',t:42.46},{w:'nicht',t:42.95},{w:'gleich',t:43.45},{w:'lang!',t:43.95}]},
+  {t:47.72, endT:51.94, type:'', words:[{w:'Warum',t:47.72},{w:'holst',t:48.32},{w:'du',t:48.93},{w:'nicht',t:49.53},{w:'die',t:50.13},{w:'kleine',t:50.73},{w:'Schere',t:51.34}]},
+  {t:52.4, endT:54.0, type:'', words:[{w:'und',t:52.40},{w:'legst',t:53.20}]},
+  {t:54.0, endT:57.61, type:'', words:[{w:'lo-os?',t:54.00},{w:'Du',t:54.60},{w:'bist',t:55.20},{w:'halt',t:55.80},{w:'immer',t:56.41},{w:'unterwegs:',t:57.01}]},
   {t:57.91, endT:58.9, type:'', words:[{w:'Ingolstadt',t:57.91},{w:'oder',t:58.24},{w:'Hamburg.',t:58.57}]},
-  {t:59.0, endT:61.92, type:'chorus', words:[{w:'Danny!',t:59.00}]},
+  {t:59.0, endT:61.92, type:'chorus', words:[{w:'DANNY!',t:59.00}]},
   {t:62.83, endT:65.32, type:'chorus', words:[{w:'Und',t:62.83},{w:'wie',t:63.33},{w:'du',t:63.83},{w:'wieder',t:64.32},{w:'aussiehst!',t:64.82}]},
   {t:65.7, endT:68.07, type:'chorus', words:[{w:'Gestriegelt',t:65.70},{w:'und',t:66.49},{w:'gebügelt!',t:67.28}]},
   {t:68.23, endT:71.2, type:'chorus', words:[{w:'Und',t:68.23},{w:'ständig',t:68.97},{w:'die',t:69.72},{w:'Musik!',t:70.46}]},
@@ -293,14 +292,14 @@ const lines = [
   {t:82.2, endT:84.15, type:'aside', words:[{w:'(Was',t:82.20},{w:"soll'n",t:82.59},{w:'die',t:82.98},{w:'Nachbarn',t:83.37},{w:'sagen?)',t:83.76}]},
   {t:84.55, endT:86.84, type:'chorus', words:[{w:'Immer',t:84.55},{w:'nur',t:85.12},{w:'für',t:85.69},{w:'Bayern!',t:86.27}]},
   {t:86.99, endT:90.8, type:'chorus', words:[{w:'Wir',t:86.99},{w:'wissen',t:87.75},{w:'nicht',t:88.51},{w:'mehr',t:89.28},{w:'weite-e-er!',t:90.04}]},
-  {t:91.16, endT:94.0, type:'', words:[{w:'Danny!',t:91.16}]},
+  {t:91.16, endT:94.0, type:'', words:[{w:'DANNY!',t:91.16}]},
   {t:94.16, endT:98.0, type:'', words:[{w:'Brich',t:94.16},{w:'deinen',t:94.80},{w:'Freunden',t:95.44},{w:'nicht',t:96.08},{w:'das',t:96.72},{w:'Herz!',t:97.36}]},
   {t:101.21, endT:103.8, type:'', words:[{w:'Es',t:101.21},{w:'ist',t:101.64},{w:'doch',t:102.07},{w:'nie',t:102.50},{w:'zu',t:102.94},{w:'spät,',t:103.37}]},
   {t:104.9, endT:109.41, type:'', words:[{w:'für',t:104.90},{w:'Vino,',t:105.54},{w:'Bier',t:106.19},{w:'und',t:106.83},{w:'Marille',t:107.48},{w:'(-rille)',t:108.12},{w:'…',t:108.77}]},
   {t:110.91, endT:115.5, type:'', words:[{w:'Wenn',t:110.91},{w:'du',t:111.42},{w:'mal',t:111.93},{w:'Liebe',t:112.44},{w:'brauchst,',t:112.95},{w:"'ne",t:113.46},{w:'Mahlzeit',t:113.97},{w:'oder',t:114.48},{w:'Trost,',t:114.99}]},
   {t:116.0, endT:118.89, type:'', words:[{w:'Claudia',t:116.00},{w:'ist',t:116.58},{w:'für',t:117.16},{w:'dich',t:117.73},{w:'da,',t:118.31}]},
   {t:119.77, endT:123.15, type:'', words:[{w:'—',t:119.77},{w:'deine',t:120.45},{w:'so',t:121.12},{w:'tolle',t:121.80},{w:'Fra-au.',t:122.47}]},
-  {t:123.15, endT:124.43, type:'chorus', words:[{w:'Danny!',t:123.15}]},
+  {t:123.15, endT:124.43, type:'chorus', words:[{w:'DANNY!',t:123.15}]},
   {t:126.75, endT:129.63, type:'chorus', words:[{w:'Und',t:126.75},{w:'wie',t:127.33},{w:'du',t:127.90},{w:'wieder',t:128.48},{w:'aussiehst,',t:129.05}]},
   {t:129.79, endT:132.12, type:'chorus', words:[{w:'braungebrannt',t:129.79},{w:'und',t:130.57},{w:'lässig,',t:131.34}]},
   {t:132.23, endT:135.26, type:'chorus', words:[{w:'und',t:132.23},{w:'ständig',t:132.99},{w:'dieser',t:133.75},{w:'Beat!',t:134.50}]},
@@ -325,7 +324,7 @@ const lines = [
   {t:215.2, endT:218.53, type:'chorus', words:[{w:'für',t:215.20},{w:'deinen',t:216.31},{w:'Lebensweg!',t:217.42}]}
 ];
 // Two countdowns - each appears 3-2-1 BEFORE its target line
-const COUNTDOWN_TARGETS = [27.30, 193.63, 215.20];
+const COUNTDOWN_TARGETS = [27.30, 59.00, 91.16, 123.15, 193.63, 215.20];
 
 // ─── BUILD DOM ──────────────────────────────────────────────────────────────
 const track = document.getElementById('lyrics-track');
