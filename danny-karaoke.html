@@ -228,13 +228,17 @@
 
 <div class="header">DANNY · KARAOKE</div>
 
-<!-- Start Screen -->
+<!-- Upload Screen -->
 <div id="upload-screen">
   <h1>DANNY</h1>
   <div class="subtitle">nach „Junge" von Die Ärzte</div>
-  <div style="margin-top: 1rem; color: #555; font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase;">🎉 Happy Birthday! 🎉</div>
-  <button class="btn visible" id="start-btn" onclick="startKaraoke()" style="margin-top: 2rem;">▶ Abspielen &amp; Starten</button>
-  <div style="margin-top: 1.5rem; color: #333; font-size: 0.8rem; letter-spacing: 0.1em;">Tipp: Vollbild mit F11 für beste Wirkung</div>
+  <div id="drop-zone">
+    <input type="file" id="file-input" accept="audio/*">
+    <div class="icon">🎵</div>
+    <p><strong>MP3 hier reinziehen</strong><br>oder klicken zum Auswählen</p>
+  </div>
+  <div id="file-name"></div>
+  <button class="btn" id="start-btn" onclick="startKaraoke()">▶ Abspielen &amp; Starten</button>
 </div>
 
 <!-- Karaoke Screen -->
@@ -265,7 +269,7 @@
 </div>
 <div class="confetti-container" id="confetti"></div>
 
-<audio id="audio-player" src="danny.m4a" type="audio/mp4" preload="auto"></audio>
+<audio id="audio-player"></audio>
 
 <script>
 const lines = [
@@ -349,9 +353,27 @@ lines.forEach((line, i) => {
 
 // ─── AUDIO + FILE UPLOAD ────────────────────────────────────────────────────
 const audio = document.getElementById('audio-player');
+const fileInput = document.getElementById('file-input');
+const dropZone = document.getElementById('drop-zone');
+const fileNameEl = document.getElementById('file-name');
 const startBtn = document.getElementById('start-btn');
 
-// Audio is loaded automatically from danny.mp3 in the same folder
+function loadFile(file) {
+  if (!file || !file.type.startsWith('audio/')) return;
+  const url = URL.createObjectURL(file);
+  audio.src = url;
+  fileNameEl.textContent = '✓ ' + file.name;
+  fileNameEl.style.display = 'block';
+  startBtn.classList.add('visible');
+}
+
+fileInput.addEventListener('change', e => loadFile(e.target.files[0]));
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  loadFile(e.dataTransfer.files[0]);
+});
 
 // ─── PLAYBACK CONTROLS ─────────────────────────────────────────────────────
 const playPauseBtn = document.getElementById('play-pause-btn');
